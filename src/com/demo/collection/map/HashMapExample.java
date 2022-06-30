@@ -1,7 +1,6 @@
 package com.demo.collection.map;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class HashMapExample {
     public static void main(String[] args) {
@@ -11,6 +10,9 @@ public class HashMapExample {
         map.put(5,"Rahul");
         map.put(2,"Jai");
         map.put(6,"Amit");
+        map.put(11,"Bharat");
+        map.put(113,"Bhumi");
+        map.put(14,"Bhisma");
         for(Map.Entry entry : map.entrySet()){
             System.out.println(entry.getKey()+ " " + entry.getValue());
         }
@@ -22,5 +24,8 @@ public class HashMapExample {
         map.put(1,"subh");
         System.out.println(map);
 
+        List<Map.Entry<Integer,String>> list= new ArrayList<>(map.entrySet());
+        Collections.sort(list,(x1,x2)->x1.getKey().compareTo(x2.getKey()));
+        list.forEach(x-> System.out.println("key = "+x.getKey() + " value = "+x.getValue()));
     }
 }
